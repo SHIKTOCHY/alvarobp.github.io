@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Who framed Roger Rabbit</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+
+  <link rel="stylesheet" href=".//css/reset.css" type="text/css"/>
+
+  
+
+  <link rel="stylesheet" type="text/css" href=".//css/fg.menu.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href=".//css/theme/ui.all.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href=".//css/highlight/default.css"  />
+
+  <link rel="stylesheet" type="text/css" href=".//css/showoff.css" />
+
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href=".//css/ie8.css" />
+  <![endif]-->
+
+  <script type="text/javascript" src=".//js/jquery-2.1.4.min.js"></script>
+
+  <script type="text/javascript" src=".//js/jquery.cycle.all.js"></script>
+  <script type="text/javascript" src=".//js/jquery-print.js"></script>
+  <script type="text/javascript" src=".//js/jquery.batchImageLoad.js"></script>
+  <script type="text/javascript" src=".//js/jquery.parsequery.min.js"></script>
+  <script type="text/javascript" src=".//js/jquery.doubletap-0.1.js"></script>
+  <script type="text/javascript" src=".//js/fg.menu.js"></script>
+  <script type="text/javascript" src=".//js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src=".//js/highlight.pack.js"></script>
+
+  <script type="text/javascript" src=".//js/coffee-script.js"></script>
+
+  <script type="text/javascript" src=".//js/showoff.js"></script>
+
+  
+    
+    <link rel="stylesheet" href=".//file/styles.css" type="text/css"/>
+  
+
+  
+
+  <script type="text/javascript">
+    $(function(){
+      setupPreso(false, './');
+    });
+
+    editUrl  = "";
+
+    keymap = {
+  "space": "NEXT",
+  "d": "DEBUG",
+  "up": "PREV",
+  "left": "PREV",
+  "pageup": "PREV",
+  "down": "NEXT",
+  "right": "NEXT",
+  "pagedown": "NEXT",
+  "r": "RELOAD",
+  "c": "CONTENTS",
+  "t": "CONTENTS",
+  "h": "HELP",
+  "/": "HELP",
+  "?": "HELP",
+  "b": "BLANK",
+  ".": "BLANK",
+  "F": "FOOTER",
+  "f": "FOLLOW",
+  "n": "NOTES",
+  "esc": "CLEAR",
+  "p": "PAUSE",
+  "P": "PRESHOW",
+  "x": "EXECUTE",
+  "f5": "EXECUTE"
+};
+  </script>
+
+</head>
+
+<body>
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+
+<div id="help">
+  <h1>Showoff Hotkeys</h1>
+  <div>
+    <span class="description">Move to the next slide.</span>
+    <span class="action">NEXT</span>
+    <span class="hotkeys"><span class="key">space</span><span class="key">down</span><span class="key">right</span><span class="key">pagedown</span></span>
+  </div>
+  <div>
+    <span class="description">Move to the previous slide.</span>
+    <span class="action">PREV</span>
+    <span class="hotkeys"><span class="key">up</span><span class="key">left</span><span class="key">pageup</span></span>
+  </div>
+  <div>
+    <span class="description">Show the table of contents menu.</span>
+    <span class="action">CONTENTS</span>
+    <span class="hotkeys"><span class="key">c</span><span class="key">t</span></span>
+  </div>
+  <div>
+    <span class="description">Toggle follow mode.</span>
+    <span class="action">FOLLOW</span>
+    <span class="hotkeys"><span class="key">f</span></span>
+  </div>
+  <div>
+    <span class="description">Show this help dialog.</span>
+    <span class="action">HELP</span>
+    <span class="hotkeys"><span class="key">h</span><span class="key">/</span><span class="key">?</span></span>
+  </div>
+
+  <hr />
+
+  <div>
+    <span class="description">Reload all slides.</span>
+    <span class="action">RELOAD</span>
+    <span class="hotkeys"><span class="key">r</span></span>
+  </div>
+  <div>
+    <span class="description">Blank the screen.</span>
+    <span class="action">BLANK</span>
+    <span class="hotkeys"><span class="key">b</span><span class="key">.</span></span>
+  </div>
+  <div>
+    <span class="description">Toggle the display footer.</span>
+    <span class="action">FOOTER</span>
+    <span class="hotkeys"><span class="key">F</span></span>
+  </div>
+  <div>
+    <span class="description">Toggle notes display.</span>
+    <span class="action">NOTES</span>
+    <span class="hotkeys"><span class="key">n</span></span>
+  </div>
+  <div>
+    <span class="description">Clear code execution results.</span>
+    <span class="action">CLEAR</span>
+    <span class="hotkeys"><span class="key">esc</span></span>
+  </div>
+  <div>
+    <span class="description">Pause the presentation.</span>
+    <span class="action">PAUSE</span>
+    <span class="hotkeys"><span class="key">p</span></span>
+  </div>
+  <div>
+    <span class="description">Display slideshow of <tt>preshow</tt> images on a timer.</span>
+    <span class="action">PRESHOW</span>
+    <span class="hotkeys"><span class="key">P</span></span>
+  </div>
+  <div>
+    <span class="description">Execute the first visible code block.</span>
+    <span class="action">EXECUTE</span>
+    <span class="hotkeys"><span class="key">x</span><span class="key">f5</span></span>
+  </div>
+
+  <hr />
+
+  <div>
+    <span class="description">Show debugging information.</span>
+    <span class="action">DEBUG</span>
+    <span class="hotkeys"><span class="key">d</span></span>
+  </div>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso"><center>loading presentation...</center></div>
+<div id="footer">
+  <span id="followMode"></span>
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+  <span id="notesInfo"></span>
+  <span id="slideFilename"></span>
+  <img id="disconnected" src=".//css/disconnected.png" />
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div id="1-what_what" class="slide center" data-transition="none">
+<div class="content center" ref="1-what/what/1">
+<p><img src="./file/1-what/who-framed.gif" alt="who-framed-roger-rabbit"></p>
+</div>
+</div>
+<div id="1-what_what" class="slide " data-transition="none">
+<div class="content " ref="1-what/what/2">
+<h1>What?</h1>
+</div>
+</div>
+<div id="1-what_what" class="slide center" data-transition="none">
+<div class="content center" ref="1-what/what/3">
+<p><img src="./file/1-what/parental_advisory.jpg" alt="Viewer Discretion is Advised"></p>
+
+<p>This is strongly based in:</p>
+
+<p><a href="http://rubyamqp.info" target="_blank">Ruby AMQP Guides</a></p>
+
+<p>(i.e. this is a <u>scam</u>)</p>
+</div>
+</div>
+<div id="1-what_what" class="slide bullets" data-transition="none">
+<div class="content bullets" ref="1-what/what/4">
+<h1>In brief</h1>
+
+<ul>
+<li>
+<strong>Messages</strong> are published by <u>producers</u> to <strong>exchanges</strong>. </li>
+<li>Exchanges then distribute message copies to <strong>queues</strong> using rules called <strong>bindings</strong>. </li>
+<li>AMQP <u>brokers</u> either push messages to <u>consumers</u> subscribed to queues, or consumers fetch/pull messages from queues on demand.</li>
+</ul>
+</div>
+</div>
+<div id="1-what_what" class="slide center" data-transition="none">
+<div class="content center" ref="1-what/what/5">
+<p><img src="./file/1-what/001_hello_world_example_routing.png" alt="Hello World"></p>
+</div>
+</div>
+<div id="1-what_what" class="slide " data-transition="none">
+<div class="content " ref="1-what/what/6">
+<h1>AMQP 0.9.1 Model</h1>
+
+<p>Connection / Channel / VHost</p>
+
+<p>Exchange</p>
+
+<p>Queue</p>
+
+<p>Binding</p>
+
+<p>Message</p>
+
+<p>Consumer</p>
+
+<p>Extensible</p>
+</div>
+</div>
+<div id="1-what_what" class="slide " data-transition="none">
+<div class="content " ref="1-what/what/7">
+<h1>Programmable Protocol</h1>
+
+<p>AMQP entities and routing schemes (by default) are defined by applications themselves, not a broker administrator.</p>
+
+<p><code>
+Consumers may not get messages when booting / restarting the broker and/or your services.
+</code></p>
+
+<p><code>
+Be aware of potential definition conflicts!
+</code></p>
+</div>
+</div>
+<div id="1-what_what" class="slide " data-transition="none">
+<div class="content " ref="1-what/what/8">
+<h1>RabbitMQ</h1>
+
+<p>Implements <u>AMQP 0.9.1</u> and provides some extensions</p>
+
+<p>Publisher confirmations</p>
+
+<p>Negative acknowledgements</p>
+
+<p>Alternate Exchanges</p>
+
+<p>Per-queue Message Time-to-Live</p>
+
+<p>...</p>
+
+<p>These extensions are way out of the scope of this presentation.</p>
+</div>
+</div>
+<div id="2-queues_queues" class="slide center" data-transition="none">
+<div class="content center" ref="2-queues/queues/1">
+<h1>Queues</h1>
+</div>
+</div>
+<div id="2-queues_queues" class="slide " data-transition="none">
+<div class="content " ref="2-queues/queues/2">
+<p>Queues store messages </p>
+
+<p>to be fetched by consumers</p>
+</div>
+</div>
+<div id="2-queues_queues" class="slide bullets" data-transition="none">
+<div class="content bullets" ref="2-queues/queues/3">
+<h1>Queues have</h1>
+
+<ul>
+<li>Name</li>
+<li>Exclusivity</li>
+<li>Durability</li>
+<li>Auto-deletion</li>
+<li>Metadata</li>
+</ul>
+</div>
+</div>
+<div id="2-queues_queues" class="slide " data-transition="none">
+<div class="content " ref="2-queues/queues/4">
+<h1>Exclusive queues</h1>
+
+<h2>Can only be accessed by one connection and are deleted when that connection closes.</h2>
+
+<p>So two connections cannot declare a queue with the same name</p>
+</div>
+</div>
+<div id="2-queues_queues" class="slide " data-transition="none">
+<div class="content " ref="2-queues/queues/5">
+<h1>Durable queues</h1>
+
+<h2>Remain active when a server restarts.</h2>
+
+<p>Non-durable queues (<u>transient queues</u>) are purged if/when a server restarts.</p>
+</div>
+</div>
+<div id="2-queues_queues" class="slide " data-transition="none">
+<div class="content " ref="2-queues/queues/6">
+<h1>Auto-delete queues</h1>
+
+<p>Are deleted when all consumers have finished using them.</p>
+</div>
+</div>
+<div id="2-queues_queues" class="slide center" data-transition="none">
+<div class="content center" ref="2-queues/queues/7">
+<h1>Pull API</h1>
+
+<p>The AMQP v0.9.1 specification also provides a way for applications to fetch (pull) messages from the queue only when necessary.</p>
+
+<pre class="highlight"><code class="language-ruby">queue.pop do |metadata, payload|
+  if payload
+    puts "Fetched a message: #{payload.inspect}, content_type: #{metadata.content_type}."
+  else
+    puts "No messages in the queue"
+  end
+end</code></pre>
+</div>
+</div>
+<div id="3-exchanges_exchanges" class="slide center" data-transition="none">
+<div class="content center" ref="3-exchanges/exchanges/1">
+<h1>Exchanges</h1>
+
+<p><img src="./file/3-exchanges/postman.jpg" alt="Postman"></p>
+</div>
+</div>
+<div id="3-exchanges_exchanges" class="slide center" data-transition="none">
+<div class="content center" ref="3-exchanges/exchanges/2">
+<blockquote>
+<p>Exchanges take a message and route it into zero or more queues</p>
+</blockquote>
+
+<p><u>Often compared to post offices</u></p>
+</div>
+</div>
+<div id="3-exchanges_exchanges" class="slide bullets" data-transition="none">
+<div class="content bullets" ref="3-exchanges/exchanges/3">
+<h1>Exchanges have</h1>
+
+<ul>
+<li>Name</li>
+<li>Durability</li>
+<li>Metadata</li>
+</ul>
+</div>
+</div>
+<div id="3-exchanges_exchanges" class="slide center" data-transition="none">
+<div class="content center" ref="3-exchanges/exchanges/4">
+<h1>Direct Exchange</h1>
+
+<p><u>Typically used for for 1-to-1 communication or unicasting</u></p>
+
+<p><img src="./file/3-exchanges/direct_exchange.png" alt="Direct Exchange"></p>
+</div>
+</div>
+<div id="3-exchanges_exchanges" class="slide center" data-transition="none">
+<div class="content center" ref="3-exchanges/exchanges/5">
+<h1>Direct Exchange</h1>
+
+<h2>Use cases</h2>
+
+<p>Direct (near real-time) messages to individual players in an MMO game</p>
+
+<p>Delivering notifications to specific geographic locations (for example, points of sale)</p>
+
+<p>Distributing tasks between multiple instances of the same application all having the same function</p>
+</div>
+</div>
+<div id="3-exchanges_exchanges" class="slide center" data-transition="none">
+<div class="content center" ref="3-exchanges/exchanges/6">
+<h1>Default Exchange</h1>
+
+<p>Direct exchange with no name</p>
+
+<p>Pre-declared by the broker</p>
+
+<p>Every queue is automatically bound to it with a routing key which is the same as the queue name</p>
+</div>
+</div>
+<div id="3-exchanges_exchanges" class="slide center" data-transition="none">
+<div class="content center" ref="3-exchanges/exchanges/7">
+<h1>Fanout Exchange</h1>
+
+<p><u>1-to-n communication or broadcasting</u></p>
+
+<p><img src="./file/3-exchanges/fanout_exchange.png" alt="Fanout Exchange"></p>
+</div>
+</div>
+<div id="3-exchanges_exchanges" class="slide center" data-transition="none">
+<div class="content center" ref="3-exchanges/exchanges/8">
+<h1>Fanout Exchange</h1>
+
+<h2>Use cases</h2>
+
+<p>Massively multiplayer online (MMO) games can use it for global events</p>
+
+<p>Sport news sites can use them for distributing score updates to mobile clients in near real-time</p>
+
+<p>Distributed systems can broadcast various state and configuration updates</p>
+</div>
+</div>
+<div id="3-exchanges_exchanges" class="slide " data-transition="none">
+<div class="content " ref="3-exchanges/exchanges/9">
+<h1>Don't get confused</h1>
+
+<p>Binding queues to <u>direct</u> exchanges <strong>WITHOUT</strong> specifying a <strong>routing key</strong> can behave exactly as if using a <u>fanout</u> exchange.</p>
+</div>
+</div>
+<div id="3-exchanges_exchanges" class="slide " data-transition="none">
+<div class="content " ref="3-exchanges/exchanges/10">
+<h1>Topic Exchange</h1>
+
+<p><u>1-to-n or n-to-m communication, multicasting.</u></p>
+
+<p>Matches routing key and a pattern used to bind a queue to the exchange.</p>
+</div>
+</div>
+<div id="3-exchanges_exchanges" class="slide center" data-transition="none">
+<div class="content center" ref="3-exchanges/exchanges/11">
+<h1>Topic Example</h1>
+
+<p><img src="./file/3-exchanges/topic_exchange_scenario.png" alt="Topic Exchange Scenario"></p>
+
+<pre class="highlight"><code class="language-topic_exchange_scenario">'quick.orange.rabbit'  =&gt; Q1, Q2
+'lazy.orange.elephant' =&gt; Q1, Q2
+'quick.orange.fox'     =&gt; Q1
+'lazy.brown.fox'       =&gt; Q2
+'quick.brown.fox'      =&gt; DISCARDED</code></pre>
+</div>
+</div>
+<div id="3-exchanges_exchanges" class="slide " data-transition="none">
+<div class="content " ref="3-exchanges/exchanges/12">
+<h1>Headers exchange</h1>
+
+<p><u>Message metadata-based routing</u></p>
+
+<pre class="highlight"><code class="language-ruby"># when binding to a headers exchange, :arguments parameter is used to specify matching rules
+@channel.queue("", :auto_delete =&gt; true).bind(exchange, :arguments =&gt; { :os =&gt; 'linux' })</code></pre>
+
+<p><br></p>
+
+<pre class="highlight"><code class="language-ruby">exchange.publish "For linux/IA64",   :headers =&gt; { :arch =&gt; "IA64", :os =&gt; 'linux' }
+exchange.publish "For linux/x86",    :headers =&gt; { :arch =&gt; "x86",  :os =&gt; 'linux' }
+exchange.publish "For any linux",    :headers =&gt; { :os =&gt; 'linux' }</code></pre>
+
+<p><br></p>
+
+<pre class="highlight"><code class="language-ruby">@channel.queue("", :auto_delete =&gt; true).bind(exchange,
+    :arguments =&gt; { :os =&gt; 'linux', :arch =&gt; 'x86' })</code></pre>
+</div>
+</div>
+<div id="3-exchanges_exchanges" class="slide center" data-transition="none">
+<div class="content center" ref="3-exchanges/exchanges/13">
+<h1>Headers Exchange</h1>
+
+<h2>Use cases</h2>
+
+<p>Transfer of work between stages in a multi-step workflow (routing slip pattern)</p>
+
+<p>Distributed build/continuous integration systems can distribute builds based on multiple parameters</p>
+</div>
+</div>
+<div id="3-exchanges_exchanges" class="slide center" data-transition="none">
+<div class="content center" ref="3-exchanges/exchanges/14">
+<h1>Simulator</h1>
+
+<p><a href="http://tryrabbitmq.com" target="_blank">http://tryrabbitmq.com</a></p>
+</div>
+</div>
+<div id="4-durability_durability" class="slide center" data-transition="none">
+<div class="content center" ref="4-durability/durability/1">
+<h1>Durability</h1>
+</div>
+</div>
+<div id="4-durability_durability" class="slide center" data-transition="none">
+<div class="content center" ref="4-durability/durability/2">
+<h1>Be aware</h1>
+
+<p>Durability of exchanges<br></p>
+
+<p>Durability of queues<br></p>
+
+<p>Persistence of messages<br></p>
+</div>
+</div>
+<div id="4-durability_durability" class="slide " data-transition="none">
+<div class="content " ref="4-durability/durability/3">
+<h1>Durability of queues</h1>
+
+<p>Durability of a queue does not make messages that are routed to that queue durable.</p>
+
+<p><strong>Only persistent messages are recovered after a broker restart.</strong></p>
+</div>
+</div>
+<div id="4-durability_durability" class="slide " data-transition="none">
+<div class="content " ref="4-durability/durability/4">
+<h1>Persistence of messages</h1>
+
+<p>Messages may be published as persistent (or not)</p>
+
+<p>Publishing to durable exchange/queue DOES NOT make messages durable</p>
+
+<p>Publishing messages as persistent affects performance</p>
+</div>
+</div>
+<div id="5-acknowledgement_acknowledgement" class="slide center" data-transition="none">
+<div class="content center" ref="5-acknowledgement/acknowledgement/1">
+<h1>Acknowledgement</h1>
+</div>
+</div>
+<div id="5-acknowledgement_acknowledgement" class="slide center" data-transition="none">
+<div class="content center" ref="5-acknowledgement/acknowledgement/2">
+<h1>Automatic acknowledgement</h1>
+
+<p><br><br>
+AMQP broker <strong>removes a message</strong> from the queue after it is sent to an application</p>
+</div>
+</div>
+<div id="5-acknowledgement_acknowledgement" class="slide center" data-transition="none">
+<div class="content center" ref="5-acknowledgement/acknowledgement/3">
+<h1>Explicit acknowledgement</h1>
+
+<p>AMQP broker <strong>removes a message</strong> after the application sends back an acknowledgement for the message</p>
+
+<p><img src="./file/5-acknowledgement/acknowledgements.png" alt="AMQP Acknowledgement"></p>
+</div>
+</div>
+<div id="5-acknowledgement_acknowledgement" class="slide center" data-transition="none">
+<div class="content center" ref="5-acknowledgement/acknowledgement/4">
+<h1>Explicit acknowledgement</h1>
+
+<p>When a consumer dies without sending an acknowledgement:</p>
+
+<ul>
+<li>Message is redelivered to another consumer (round-robin)</li>
+<li>Broker waits until at least one consumer is registered for the same queue if there are no other consumers</li>
+</ul>
+</div>
+</div>
+<div id="6-qos-prefetching_qos-prefetching" class="slide center" data-transition="none">
+<div class="content center" ref="6-qos-prefetching/qos-prefetching/1">
+<h1>QoS</h1>
+
+<h2>(Message Prefetching)</h2>
+</div>
+</div>
+<div id="6-qos-prefetching_qos-prefetching" class="slide " data-transition="none">
+<div class="content " ref="6-qos-prefetching/qos-prefetching/2">
+<h1>Prefetching</h1>
+
+<ul>
+<li>Simple load balancing technique</li>
+<li>Improves throughput if messages tend to be published in batches</li>
+<li>For cases when multiple consumers share a queue</li>
+</ul>
+</div>
+</div>
+<div id="6-qos-prefetching_qos-prefetching" class="slide " data-transition="none">
+<div class="content " ref="6-qos-prefetching/qos-prefetching/3">
+<h1>Prefetching</h1>
+
+<p>Number of messages to send to a consumer without receiving an acknowledgement</p>
+
+<p>Obviously prefetching is ignored for consumers that do not use explicit acknowledgements</p>
+</div>
+</div>
+<div id="6-qos-prefetching_qos-prefetching" class="slide " data-transition="none">
+<div class="content " ref="6-qos-prefetching/qos-prefetching/4">
+<h1>Prefetching</h1>
+
+<pre class="highlight"><code class="language-ruby">channel1.prefetch(3)
+
+# App #1 will be given up to 3 messages at a time. If it does not
+# send an ack after receiving the messages, then the messages will
+# be routed to app #2.
+
+channel2.prefetch(1)
+# app #2 processes messages one-by-one and has to send an ack after receiving each message</code></pre>
+</div>
+</div>
+<div id="7-use-cases_use-cases" class="slide center" data-transition="none">
+<div class="content center" ref="7-use-cases/use-cases">
+<h1>Use cases</h1>
+
+<p><a href="http://rubyamqp.info/articles/patterns_and_use_cases" target="_blank">http://rubyamqp.info/articles/patterns_and_use_cases</a></p>
+</div>
+</div>
+<div id="8-in-my-opinion_in-my-opinion" class="slide center" data-transition="none">
+<div class="content center" ref="8-in-my-opinion/in-my-opinion">
+<h1>IMHO</h1>
+
+<p><strong>Queues</strong> love <strong>Exchanges</strong>! We should enforce 0.9.1</p>
+
+<p>We should not use the default exchange</p>
+
+<p>Publishers should not know who their consumers (queues) are</p>
+
+<p>Publishing/consuming messages should be a no brainer (More extended convention?)</p>
+</div>
+</div>
+<div id="end_end" class="slide center" data-transition="none">
+<div class="content center" ref="end/end/1">
+<h1>RTFM</h1>
+
+<p><a href="http://rubyamqp.info" target="_blank">http://rubyamqp.info</a></p>
+</div>
+</div>
+<div id="end_end" class="slide " data-transition="none">
+<div class="content " ref="end/end/2">
+<h1>THE END</h1>
+</div>
+</div>
+</div>
+<div id="pauseScreen">
+  PAUSED
+</div>
+
+</body>
+</html>

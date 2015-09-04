@@ -1,0 +1,51 @@
+body > #preso,
+body > #preso > .slide {
+  height: 100%;
+  width: 100%;
+}
+
+.content > ul {
+  font-size: 2em;
+  padding-left: 90px;
+}
+
+.content > pre {
+  margin: 1em 1em;
+  background-color: #EEE;
+  border: 1px solid #DDD;
+  padding: 5px;
+  overflow: auto;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+.content > pre.sh_topic_exchange_scenario {
+  background: none;
+  border: none;
+  padding: none;
+  text-align: left;
+  margin-left: 340px;
+}
+
+.content > pre.sh_set_permissions {
+  width: 700px;
+  margin-left: 145px;
+}
+
+table {
+  margin: 0 auto;
+  width: 70%;
+  border-top: #E4E4E4 1px solid;
+  border-left: #E4E4E4 1px solid;
+}
+
+tr {
+  vertical-align: top;
+}
+
+th, td {
+  border-bottom: #E4E4E4 1px solid;
+  border-right: #E4E4E4 1px solid;
+  text-align: left;
+  padding: 2px 0.5em 2px 0.5em;
+}
